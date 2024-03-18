@@ -99,14 +99,14 @@ class pseudoRandom {
 	/**
 	 * Saves the current state of the PRNG for later restoration.
 	 */
-	saveStatus() {
+	saveState() {
 		this.savedRSeed = this.RSeed;
 	}
 
 	/**
 	 * Restores the PRNG to a previously saved state.
 	 */
-	restoreStatus() {
+	restoreState() {
 		if (this.savedRSeed !== null) {
 			this.RSeed = this.savedRSeed;
 		}
