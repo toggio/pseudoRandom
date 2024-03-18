@@ -83,7 +83,7 @@ class pseudoRandom {
 	 * Saves the current state of the PRNG for later restoration. This is useful
 	 * for applications that need to backtrack or repeat a sequence of generated numbers.
 	 */
-	public function saveStatus() {
+	public function saveState() {
 		self::$savedRSeed = self::$RSeed;
 	}
 
@@ -91,7 +91,7 @@ class pseudoRandom {
 	 * Restores the PRNG to a previously saved state. This allows the sequence of
 	 * generated numbers to be replicated by rolling back to an earlier state.
 	 */
-	public function restoreStatus() {
+	public function restoreState() {
 		if (self::$savedRSeed !== null) {
 			self::$RSeed = self::$savedRSeed;
 		}
