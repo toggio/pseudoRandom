@@ -15,32 +15,32 @@ The `pseudoRandom` library provides a consistent interface for generating pseudo
 
 ### Installation
 
-For PHP, include the library in your script:
+For **PHP**, include the library in your script:
 
 ```php
 require_once('/path/to/pseudoRandom.php');
 ```
 
-For Python, ensure the file is in your project directory or in the PYTHONPATH, and then import it:
+For **Python**, ensure the file is in your project directory or in the PYTHONPATH, and then import it:
 
 ```python
 from pseudoRandom import pseudoRandom
 ```
 
-For JavaScript, include the script in your HTML or import it in your project:
+For **JavaScript**, include the script in your HTML or import it in your project:
 
 ```html
 <script src="path/to/pseudoRandom.js"></script>
 ```
 
-### Usage
+### Basic Usage
 
 #### PHP
 
 Initialize the generator:
 
 ```php
-$random = new pseudoRandom();
+$random = new pseudoRandom(12345);
 $random->reSeed(12345); // Optional: re-seed the generator
 ```
 
@@ -104,7 +104,7 @@ The `pseudoRandom` library utilizes a linear congruential generator (LCG), one o
 
 The relationship can be expressed as:
 
-    R(n+1) = (aR(n) + c) mod m,
+    R(n+1) = (aR(n) + c) mod m
 
 where `R(n)` is the nth random number in the sequence. The choice of `a`, `c`, and `m` values is crucial for achieving a good distribution of pseudo-random numbers across the desired range.
 
@@ -117,6 +117,6 @@ To accommodate various use cases, the library not only allows for generating ran
 By default, if no seed is provided, `pseudoRandom` uses the current epoch time in seconds as the seed, ensuring a unique starting point for the sequence with each new instance. Moreover, the library's reliability and randomness have been validated by passing the comprehensive Dieharder test suite. The test logs can be reviewed [here](https://github.com/toggio/pseudoRandom/blob/main/dieharder.log).
 
 ### License
-*pseudoRandom* is licensed under the Apache License, Version 2.0. You are free to use, modify, and distribute the library in compliance with the license.
+**pseudoRandom** is licensed under the Apache License, Version 2.0. You are free to use, modify, and distribute the library in compliance with the license.
 
 Copyright (C) 2024 Luca Soltoggio - https://www.lucasoltoggio.it/
