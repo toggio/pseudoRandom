@@ -41,19 +41,31 @@ Initialize the generator:
 
 ```php
 $random = new pseudoRandom(12345);
-$random->reSeed(12345); // Optional: re-seed the generator
 ```
 
-Generate a random integer:
+Re-seed the generator:
+
+```php
+$random->reSeed("abc");
+```
+
+Generate and print a random integer:
 
 ```php
 echo $random->randInt(0, 100);
 ```
 
-Generate a random byte string:
+Generate and print a random byte string:
 
 ```php
 echo $random->randBytes(10);
+```
+
+Save and restore state:
+
+```php
+$random->saveState();
+$random->restoreState();
 ```
 
 #### Python
@@ -62,19 +74,31 @@ Initialize the generator:
 
 ```python
 random = pseudoRandom()
-random.reSeed(12345) # Optional: re-seed the generator
 ```
 
-Generate a random integer:
+Re-seed the generator:
+
+```python
+random.reSeed('abc')
+```
+
+Generate and print a random integer:
 
 ```python
 print(random.randInt(0, 100))
 ```
 
-Generate a random byte string:
+Generate and print a random byte string:
 
 ```python
 print(random.randBytes(10))
+```
+
+Save and restore state:
+
+```python
+random.saveState()
+random.restoreState()
 ```
 
 #### JavaScript
@@ -83,19 +107,31 @@ Initialize the generator:
 
 ```javascript
 const random = new pseudoRandom();
-random.reSeed(12345); // Optional: re-seed the generator
 ```
 
-Generate a random integer:
+Re-seed the generator:
+
+```javascript
+random.reSeed('abc');
+```
+
+Generate and log a random integer:
 
 ```javascript
 console.log(random.randInt(0, 100));
 ```
 
-Generate a random byte string:
+Generate and log a random byte string:
 
 ```javascript
 console.log(random.randBytes(10));
+```
+
+Save and restore state:
+
+```javascript
+random.saveState();
+random.restoreState();
 ```
 
 ### How It Works
