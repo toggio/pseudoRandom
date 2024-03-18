@@ -70,13 +70,13 @@ class pseudoRandom:
         """
         self.__init__(seed)
 
-    def saveStatus(self):
+    def saveState(self):
         """
         Saves the current state of the PRNG for later restoration.
         """
         self._savedRSeed = self._RSeed
 
-    def restoreStatus(self):
+    def restoreState(self):
         """
         Restores the PRNG to a previously saved state.
         """
