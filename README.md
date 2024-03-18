@@ -152,6 +152,26 @@ To accommodate various use cases, the library not only allows for generating ran
 
 By default, if no seed is provided, `pseudoRandom` uses the current epoch time in seconds as the seed, ensuring a unique starting point for the sequence with each new instance. Moreover, the library's reliability and randomness have been validated by passing the comprehensive Dieharder test suite. The test logs can be reviewed [here](https://github.com/toggio/pseudoRandom/blob/main/dieharder.log).
 
+### Advanced Use
+
+For advanced usage of the pseudoRandom library, we encourage users to review the source code, which includes self-explanatory comments that guide through more sophisticated functionalities not covered in this documentation. Exploring the source code can provide deeper insights into the library's capabilities and potential customizations.
+
+### Contributions
+
+Contributions to pseudoRandom are highly welcomed and appreciated. Whether it's reporting bugs, suggesting improvements, or extending the library to new languages, your input is valuable. When implementing the library in new languages, it's crucial to include all methods provided in the existing libraries and ensure that the output remains consistent across all implementations.
+
+For example, here is how you might use the library in Python with a sample seed to generate a random number and a byte string in order to check output consistency:
+
+
+```python
+# Initialize the generator with a sample seed
+random = pseudoRandom("a sample seed")
+
+# Generate a random number and a byte string
+print(random.randInt(0, 100000))  # Expected output: 35241
+print(random.randBytes(10,0,1))    # Expected output: Os&fU%asuq
+```
+
 ### License
 **pseudoRandom** is licensed under the Apache License, Version 2.0. You are free to use, modify, and distribute the library in compliance with the license.
 
