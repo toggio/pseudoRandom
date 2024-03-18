@@ -1,2 +1,2 @@
-# pseudoRand
-CrossPlatform MultiLanguage PRNG (Pseudo Random Number Generator)
+# pseudoRandom
+Universal Cross-Platform Multi-Language PRNG (Pseudo Random Number Generator) 
