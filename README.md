@@ -170,14 +170,14 @@ random = pseudoRandom("a sample seed")
 
 # Generate a random number and a byte string
 print(random.randInt(0, 100000))  # Expected output: 35241
-print(random.randBytes(10,0,1))    # Expected output: Os&fU%asuq
+print(random.randBytes(10,1))    # Expected output: b'Os&fU%asuq'
 
 # Reinitialize seed
 random.reSeed("a different seed")
 
 # Generate a random number and a byte string
 print(random.randInt(0, 100000))  # Expected output: 47786
-print(random.randBytes(10,0,1))    # Expected output: xP;LOr[<+]
+print(random.randBytes(10,1))    # Expected output: b'xP;LOr[<+]'
 ```
 
 ### License
