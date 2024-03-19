@@ -1,12 +1,12 @@
 # pseudoRandom
 ## Universal Cross-Platform Multi-Language PRNG (Pseudo Random Number Generator)
 
-The `pseudoRandom` library provides a consistent interface for generating pseudo-random numbers across multiple languages and platforms, including PHP, Python, and JavaScript. It's designed for a variety of applications, from simple simulations and games to more complex cryptographic operations. Infact, while it implements a deterministic and non-cryptographically secure algorithm, its strength lies in the ability to produce interchangeable pseudo-random sequences across different programming languages. This feature is especially useful for applications like cryptography, where a pseudo-random sequence generated in one language needs to be replicated in another to encrypt or decrypt data securely.
+The `pseudoRandom` library provides a consistent interface for generating pseudo-random numbers across multiple languages and platforms, including PHP, Python, JavaScript, C# and Java. It's designed for a variety of applications, from simple simulations and games to more complex cryptographic operations. Infact, while it implements a deterministic and non-cryptographically secure algorithm, its strength lies in the ability to produce interchangeable pseudo-random sequences across different programming languages. This feature is especially useful for applications like cryptography, where a pseudo-random sequence generated in one language needs to be replicated in another to encrypt or decrypt data securely.
 
 ### Features
 
 - **Versatile**: Supports seed initialization and re-seeding for repeatable sequences.
-- **Cross-platform Compatibility**: Works seamlessly in PHP, Python, JavaScript, C# and other environments.
+- **Cross-platform Compatibility**: Works seamlessly in PHP, Python, JavaScript, C#, Java and other environments.
 - **Deterministic Outputs**: Given the same seed and parameters, pseudoRandom will produce the indetical output across all supported languages, ideal for synchronized systems.
 - **Cryptography Support**: Enables the creation of pseudo-random sequences that can be shared between client and server (for example, JavaScript and PHP) for encrypting and decrypting data with secure cryptographic algorithms.
 - **Flexible Seed Initialization**: Allows custom seed setting or defaults to the current epoch time in seconds if no seed is provided, ensuring unique sequences for each instance.
@@ -34,7 +34,7 @@ For **JavaScript**, include the script in your HTML or import it in your project
 <script src="path/to/pseudoRandom.js"></script>
 ```
 
-### Basic Usage
+### Basic Usage for main languages
 
 #### PHP
 
