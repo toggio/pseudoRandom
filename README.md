@@ -6,7 +6,7 @@ The `pseudoRandom` library provides a consistent interface for generating pseudo
 ### Features
 
 - **Versatile**: Supports seed initialization and re-seeding for repeatable sequences.
-- **Cross-platform Compatibility**: Works seamlessly in PHP, Python, and JavaScript environments.
+- **Cross-platform Compatibility**: Works seamlessly in PHP, Python, JavaScript, C# and other environments.
 - **Deterministic Outputs**: Given the same seed and parameters, pseudoRandom will produce the indetical output across all supported languages, ideal for synchronized systems.
 - **Cryptography Support**: Enables the creation of pseudo-random sequences that can be shared between client and server (for example, JavaScript and PHP) for encrypting and decrypting data with secure cryptographic algorithms.
 - **Flexible Seed Initialization**: Allows custom seed setting or defaults to the current epoch time in seconds if no seed is provided, ensuring unique sequences for each instance.
@@ -134,6 +134,10 @@ Save and restore state:
 random.saveState();
 random.restoreState();
 ```
+
+#### Other languages
+
+To use `pseudoRandom` in other programming languages (like C# and Java), we invite you to examine the source code of the provided classes and include it in your project. Key functionalities, including methods for initializing with a seed, reseeding, saving and restoring state, generating random integers, and generating random bytes, are maintained consistently across all programming languages versions.
 
 ### How It Works
 
