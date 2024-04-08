@@ -184,6 +184,12 @@ print(random.randInt(0, 100000))  # Expected output: 47786
 print(random.randBytes(10,1))    # Expected output: b'xP;LOr[<+]'
 ```
 
+### Help us
+
+If you find this project useful and would like to support its development, consider making a donation. Any contribution is greatly appreciated!
+
+**Bitcoin (BTC) Address:** `3Ctmurhy18PmkTKPa2s7PjfAKzR8ZBj8Na`
+
 ### License
 **pseudoRandom** is licensed under the Apache License, Version 2.0. You are free to use, modify, and distribute the library in compliance with the license.
 
