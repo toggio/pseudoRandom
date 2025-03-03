@@ -37,6 +37,7 @@ limitations under the License.
 
 --[[
 PseudoRandom Number Generator Lua Module
+Tested in Lua 5.1 & LOVE2D
 
 This module implements a pseudo-random number generator (PRNG) using a linear
 congruential generator (LCG) algorithm.
@@ -111,7 +112,8 @@ local CRC32 = {
     0xbdbdf21c, 0xcabac28a, 0x53b39330, 0x24b4a3a6, 
     0xbad03605, 0xcdd70693, 0x54de5729, 0x23d967bf, 
     0xb3667a2e, 0xc4614ab8, 0x5d681b02, 0x2a6f2b94, 
-    0xb40bbe37, 0xc30c8ea1, 0x5a05df1b, 0x2d02ef8d}
+    0xb40bbe37, 0xc30c8ea1, 0x5a05df1b, 0x2d02ef8d
+}
 local function crc32hash(str)
     str = tostring(str)
     local len = string.len(str)
