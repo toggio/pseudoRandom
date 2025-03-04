@@ -80,12 +80,14 @@ local bitwise = {
 }    
 if _VERSION == "Lua 5.3" or _VERSION == "Lua 5.4" then
     local code = [[
+    local bitwise = {}
     print("Loading native Lua 5.3+ bitwise operations.")
     function bitwise.band(a, b) return a & b end
     function bitwise.bxor(a, b) return a ~ b end
-    function bitwise.rshift(a, b) return a >> b end]]
+    function bitwise.rshift(a, b) return a >> b end
+    return bitwise]]
     local func, err = load(code)
-    func()
+    bitwise = func()
 elseif pcall(require, "bit") then
     local bit = require("bit")
     bitwise.band = bit.band
