@@ -47,7 +47,57 @@ congruential generator (LCG) algorithm.
 This module makes use of a pure-lua crc32 implementation, based on the one found here:
 https://github.com/lancelijade/qqwry.lua/blob/master/crc32.lua
 ]]
-local bit = require("bit")
+local bitwise = {
+    bxor = function (a, b)
+        local result = 0
+        local bitval = 1
+        while a > 0 or b > 0 do
+            if (a % 2 ~= b % 2) then
+                result = result + bitval
+            end
+            a = math.floor(a / 2)
+            b = math.floor(b / 2)
+                bitval = bitval * 2
+          end
+            return result
+        end,
+    rshift = function (num,amt)
+            return math.floor(num / 2^amt)
+    end,
+    band = function (a, b)
+         local result = 0
+         local bitval = 1
+        while a > 0 or b > 0 do
+            if (a % 2 == 1) and (b % 2 == 1) then
+                 result = result + bitval
+             end
+            a = math.floor(a / 2)
+            b = math.floor(b / 2)
+            bitval = bitval * 2
+        end
+        return result
+    end
+}    
+if _VERSION == "Lua 5.3" or _VERSION == "Lua 5.4" then
+    local code = [[
+    print("Loading native Lua 5.3+ bitwise operations.")
+    function bitwise.band(a, b) return a & b end
+    function bitwise.bxor(a, b) return a ~ b end
+    function bitwise.rshift(a, b) return a >> b end]]
+    local func, err = load(code)
+    func()
+elseif pcall(require, "bit") then
+    local bit = require("bit")
+    bitwise.band = bit.band
+    bitwise.bxor = bit.bxor
+    bitwise.rshift = bit.rshift
+elseif pcall(require "bit32") then
+    local bit = require("bit32")
+    bitwise.band = bit.band
+    bitwise.bxor = bit.bxor
+    bitwise.rshift = bit.rshift
+end
+
 local CRC32 = {
     0x00000000, 0x77073096, 0xee0e612c, 0x990951ba, 
     0x076dc419, 0x706af48f, 0xe963a535, 0x9e6495a3, 
@@ -122,11 +172,11 @@ local function crc32hash(str)
 
     while len > 0 do
         local byte = string.byte(str, i)
-        crc = bit.bxor(bit.rshift(crc, 8), CRC32[bit.bxor(bit.band(crc, 0xFF), byte) + 1])
+        crc = bitwise.bxor(bitwise.rshift(crc, 8), CRC32[bitwise.bxor(bitwise.band(crc, 0xFF), byte) + 1])
         i = i + 1
         len = len - 1
     end
-    crc = bit.bxor(crc, 0xFFFFFFFF)
+    crc = bitwise.bxor(crc, 0xFFFFFFFF)
     if crc < 0 then crc = crc + 2 ^ 32 end
 
     return crc
