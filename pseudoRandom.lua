@@ -93,7 +93,7 @@ elseif pcall(require, "bit") then
     bitwise.band = bit.band
     bitwise.bxor = bit.bxor
     bitwise.rshift = bit.rshift
-elseif pcall(require "bit32") then
+elseif pcall(require, "bit32") then
     local bit = require("bit32")
     bitwise.band = bit.band
     bitwise.bxor = bit.bxor
