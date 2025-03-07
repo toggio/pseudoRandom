@@ -184,6 +184,10 @@ print(random.randInt(0, 100000))  # Expected output: 47786
 print(random.randBytes(10,1))    # Expected output: b'xP;LOr[<+]'
 ```
 
+### Contributors
+
+- [Christian Prestridge](https://github.com/ceptechart) - Lua language module
+
 ### Help us
 
 If you find this project useful and would like to support its development, consider making a donation. Any contribution is greatly appreciated!
